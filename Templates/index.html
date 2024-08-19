@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Authentication System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="static/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="container">
+        <!-- Left side: Video feed and authentication -->
+        <div class="left-side">
+            <h2>Video Feed</h2>
+            <div class="video-container">
+                <img id="videoFeed" src="{{ url_for('video_feed') }}" alt="Video Feed">
+            </div>
+            <div class="authentication-controls">
+                <button id="start-auth">Start Authentication</button>
+                <button id="stop-auth">Stop Authentication</button>
+            </div>
+        </div>
+
+        <!-- Right side: Status and terminal output -->
+        <div class="right-side">
+            <h2>Status</h2>
+            <div id="status-container">
+                <!-- Status updates will be displayed here -->
+                <p id="status-message">Waiting for authentication...</p>
+                <p id="status-progress">Progress: 0%</p>
+            </div>
+            <div class="terminal-output">
+                <h3>Terminal Output</h3>
+                <pre id="terminal-log"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
